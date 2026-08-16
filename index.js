@@ -405,12 +405,24 @@ function createBot() {
   if (message.includes('login')) {
     bot.chat('/login sidersxd4');
     console.log('[Auth] Login detected');
+    setTimeout(() => {
+      if (bot && botState.connected) {
+        bot.chat('/vanish');
+        console.log('[INFO] Sent /vanish after login');
+      }
+    }, 2000);
   }
 
   // Register
   if (message.includes('register')) {
     bot.chat('/register sidersxd4 sidersxd4');
     console.log('[Auth] Register detected');
+    setTimeout(() => {
+      if (bot && botState.connected) {
+        bot.chat('/vanish');
+        console.log('[INFO] Sent /vanish after register');
+      }
+    }, 2000);
   }
 
   // Creative mode success
@@ -446,6 +458,13 @@ setTimeout(() => {
     console.log('[INFO] Attempted to set creative mode (requires OP)');
   }
 }, 3000);
+
+setTimeout(() => {
+  if (bot && botState.connected) {
+    bot.chat('/vanish');
+    console.log('[INFO] Sent /vanish (requires permission)');
+  }
+}, 4000);
 
 });
 

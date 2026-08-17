@@ -6,7 +6,7 @@
     "type": "offline"
   },
   "server": {
-    "ip": "152.228.132.11",
+    "ip": "ryzennetwork.skymc.io",
     "port": 14074,
     "version": "1.21.1"
   },
